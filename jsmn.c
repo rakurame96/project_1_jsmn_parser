@@ -1,7 +1,5 @@
 
 #include "jsmn.h"
-// #define JSMN_STATIC
-
 
 JSMN_API void jsmn_init(jsmn_parser *parser) {
   parser->pos = 0;
