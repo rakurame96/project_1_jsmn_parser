@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/cygdrive/f/Career_Growth_Mentoring/Code_Sprint/project_1_jsmn_parser'
+gcc -c -Wall example.c jsmn.c jsmn.h
+gcc example.o -o example -lm
+make: Leaving directory '/cygdrive/f/Career_Growth_Mentoring/Code_Sprint/project_1_jsmn_parser'
+ 

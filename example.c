@@ -1,5 +1,5 @@
 #include "jsmn.h"
-#include "jsmn.c"
+// #include "jsmn.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -65,9 +65,14 @@ typedef struct jsmn_parser {
   int toksuper;         /* superior token node, e.g. parent object or array */
 } jsmn_parser;
 
-JSMN_API void jsmn_init(jsmn_parser *parser);
+// JSMN_API void jsmn_init(jsmn_parser *parser);
 
-JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
+// JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
+//                         jsmntok_t *tokens, const unsigned int num_tokens);
+
+void jsmn_init(jsmn_parser *parser);
+
+int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
                         jsmntok_t *tokens, const unsigned int num_tokens);
 
 static jsmntok_t *jsmn_alloc_token(jsmn_parser *parser, jsmntok_t *tokens,
