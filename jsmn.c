@@ -1,6 +1,6 @@
 #include "jsmn.h"
 
-void jsmn_init(jsmn_parser *parser) {
+JSMN_API void jsmn_init(jsmn_parser *parser) {
   parser->pos = 0;
   parser->toknext = 0;
   parser->toksuper = -1;
@@ -9,7 +9,7 @@ void jsmn_init(jsmn_parser *parser) {
 /**
  * Parse JSON string and fill tokens.
  */
-int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
+JSMN_API int jsmn_parse(jsmn_parser *parser, const char *js, const size_t len,
                         jsmntok_t *tokens, const unsigned int num_tokens) {
   int r;
   int i;

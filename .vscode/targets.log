@@ -5,9 +5,8 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat May 21 11:36:51 2022
+# Make data base, printed on Mon May 23 07:11:17 2022
 
 # Variables
 
@@ -22,7 +21,7 @@ USERPROFILE = C:\Users\MSI
 # environment
 LOCALAPPDATA = C:\Users\MSI\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-58e00b58-ae6c-4cb8-9ff6-eb254baad980-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-08113adb-1bce-46bd-b48d-6092daa11048-sock
 # environment
 VSCODE_CWD = C:\Users\MSI\AppData\Local\Programs\Microsoft VS Code
 # environment
@@ -36,7 +35,7 @@ MAKE_COMMAND := make
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13232_OMDYLHXIEFBFRBYU
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17708_ERJLZQEUCMULHRXN
 # environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
@@ -65,7 +64,6 @@ TMP = /cygdrive/c/Users/MSI/AppData/Local/Temp
 MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\MSI\OneDrive
- 
 # makefile
 CURDIR := /cygdrive/f/Career_Growth_Mentoring/Code_Sprint/project_1_jsmn_parser
 # environment
@@ -91,7 +89,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 13232
+VSCODE_PID = 17708
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -213,8 +211,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
 # makefile (from 'Makefile', line 8)
 CEXE = -o
 # variable set hash-table stats:
- 
-# Load=100/1024=10%, Rehash=0, Collisions=14/132=11%
+# Load=100/1024=10%, Rehash=0, Collisions=13/132=10%
 
 # Pattern-specific Variable Values
 
@@ -222,9 +219,9 @@ CEXE = -o
 
 # Directories
 
-# . (device 510378212, inode 1125899906858473): 14 files, no impossibilities.
+# . (device 510378212, inode 1125899906858473): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -248,9 +245,28 @@ clean:
 
 example.o: example.c
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-20 23:58:42.4164819
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := example.o
+# automatic
+# * := 
+# automatic
+# < := example.c
+# automatic
+# + := example.c
+# automatic
+# % := 
+# automatic
+# ^ := example.c
+# automatic
+# ? := example.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
 #  recipe to execute (from 'Makefile', line 17):
 	$(CC) $(CFLAGS) example.c jsmn.c jsmn.h
 
@@ -271,28 +287,11 @@ all: main
 
 main: example.o
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := main
-# automatic
-# * := 
-# automatic
-# < := example.o
-# automatic
-# + := example.o
-# automatic
-# % := 
-# automatic
-# ^ := example.o
-# automatic
-# ? := example.o
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=7/13=54%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 14):
 	$(CC) example.o $(CEXE) example -lm
 
@@ -306,7 +305,7 @@ example.exe: example.o
 # Not a target:
 example.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-20 23:46:31.6646996
+#  Last modified 2022-05-21 11:37:56.0359516
 #  File has been updated.
 #  Successfully updated.
 
@@ -324,12 +323,12 @@ example.c:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 20 / storage = 185 B / avg = 9 B
-# current buf: size = 8162 B / used = 185 B / count = 20 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 21 / storage = 192 B / avg = 9 B
+# current buf: size = 8162 B / used = 192 B / count = 21 / avg = 9 B
 
-# strcache performance: lookups = 37 / hit rate = 45%
+# strcache performance: lookups = 36 / hit rate = 41%
 # hash-table stats:
-# Load=20/8192=0%, Rehash=0, Collisions=0/37=0%
-# Finished Make data base on Sat May 21 11:36:51 2022
+# Load=21/8192=0%, Rehash=0, Collisions=0/36=0%
+# Finished Make data base on Mon May 23 07:11:17 2022
 
  
