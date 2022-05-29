@@ -2,25 +2,16 @@
 CC = gcc
 
 # Variable for the compile process
-CFLAGS = -c -Wall
+CFLAGS = -c
 
 # Variable for executable file
 CEXE  = -o
 
-# Look for .exe name and builds the necessary files (main = main.exe)
-all: main
-	$(CC) example.o jsmn.o $(CEXE) example
+main:
+	$(CC) -g example.c jsmn.c $(CEXE) example
 
-main: example.o
-	$(CC) example.o $(CEXE) example 
-
-example.o: example.c 
-	$(CC) $(CFLAGS) example.c jsmn.c
-
-# Generate the executable file
-example.exe: example.o
-	$(CC) example.o $(CEXE) example
+# jsmn.o: 	$(cc) -g jsmn.c $(CFLAGS) jsmn.o
 
 clean: 
-	rm -f *.o *.s *.exe *.gch main
+	rm -f *.o example
 
