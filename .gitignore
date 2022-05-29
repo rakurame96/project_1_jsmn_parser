@@ -3,3 +3,5 @@ Preprocessed_file.txt
 /.vscode/*.log
 /html/
 Doxyfile
+example_comments.c
+jsmn_comments.c

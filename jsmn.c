@@ -1,8 +1,5 @@
 #include <stdio.h>
-
 #include "jsmn.h"
-
-// #define DEBUG
 
 void jsmn_init(jsmn_parser * parser) {
     parser->pos = 0;
@@ -21,15 +18,15 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
     int count = parser->toknext;
 
     #ifdef DEBUG
-    for (int i = 0; i < len; i++) {
-        printf("%c", *(js + i));
-        /*
-        // Other way to test this function
-        putchar(*(js + i));
+        for (int i = 0; i < len; i++) {
+            printf("%c", *(js + i));
+            /*
+            // Other way to test this function
+            putchar(*(js + i));
+            printf("\n");
+            */
+        }
         printf("\n");
-        */
-    }
-    printf("\n");
     #endif
 
     /*
@@ -57,7 +54,7 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
                 return JSMN_ERROR_NOMEM;
             }
             if (parser->toksuper != -1) {
-                jsmntok_t * t = & tokens[parser->toksuper];
+                jsmntok_t * t = &tokens[parser->toksuper];
                 #ifdef JSMN_STRICT
                 /* In strict mode an object or array can't become a key */
                 if (t->type == JSMN_OBJECT) {
@@ -84,7 +81,7 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
             if (parser->toknext < 1) {
                 return JSMN_ERROR_INVAL;
             }
-            token = & tokens[parser->toknext - 1];
+            token = &tokens[parser->toknext - 1];
             for (;;) {
                 if (token->start != -1 && token->end == -1) {
                     if (token->type != type) {
@@ -100,11 +97,11 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
                     }
                     break;
                 }
-                token = & tokens[token->parent];
+                token = &tokens[token->parent];
             }
             #else
             for (i = parser->toknext - 1; i >= 0; i--) {
-                token = & tokens[i];
+                token = &tokens[i];
                 if (token->start != -1 && token->end == -1) {
                     if (token->type != type) {
                         return JSMN_ERROR_INVAL;
@@ -119,7 +116,7 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
                 return JSMN_ERROR_INVAL;
             }
             for (; i >= 0; i--) {
-                token = & tokens[i];
+                token = &tokens[i];
                 if (token->start != -1 && token->end == -1) {
                     parser->toksuper = i;
                     break;
@@ -181,7 +178,7 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
         case 'n':
             /* And they must not be keys of the object */
             if (tokens != NULL && parser->toksuper != -1) {
-                const jsmntok_t * t = & tokens[parser->toksuper];
+                const jsmntok_t * t = &tokens[parser->toksuper];
                 if (t->type == JSMN_OBJECT ||
                     (t->type == JSMN_STRING && t->size != 0)) {
                     return JSMN_ERROR_INVAL;
@@ -225,12 +222,12 @@ int jsmn_parse(jsmn_parser * parser, const char * js, const size_t len,
  * Allocates a fresh unused token from the token pool.
  */
 static jsmntok_t * jsmn_alloc_token(jsmn_parser * parser, jsmntok_t * tokens,
-    const size_t num_tokens) {
+                                    const size_t num_tokens) {
     jsmntok_t * tok;
     if (parser->toknext >= num_tokens) {
         return NULL;
     }
-    tok = & tokens[parser->toknext++];
+    tok = &tokens[parser->toknext++];
     tok->start = tok->end = -1;
     tok->size = 0;
     #ifdef JSMN_PARENT_LINKS
@@ -255,10 +252,8 @@ static void jsmn_fill_token(jsmntok_t * token,
 /**
  * Fills next available token with JSON primitive.
  */
-static int jsmn_parse_primitive(jsmn_parser * parser,
-    const char * js,
-        const size_t len, jsmntok_t * tokens,
-            const size_t num_tokens) {
+static int jsmn_parse_primitive(jsmn_parser * parser, const char * js, const size_t len, 
+                                jsmntok_t * tokens, const size_t num_tokens) {
     jsmntok_t * token;
     int start;
 
