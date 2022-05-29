@@ -8,10 +8,9 @@
  * tokens is predictable.
  */
 
-// static const char * JSON_STRING =
-// "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  "
-// "\"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}";
-static const char * JSON_STRING = "{\"user\": \"johndoe\"}";
+static const char * JSON_STRING =
+"{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  "
+"\"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}";
 
 static int jsoneq(const char * json, jsmntok_t * tok, const char * s) {
     if (tok->type == JSMN_STRING && (int)strlen(s) == tok->end - tok->start &&
@@ -26,6 +25,17 @@ int main() {
     int r;
     jsmn_parser p;
     jsmntok_t t[128]; /* We expect no more than 128 tokens */
+
+    /*
+    ** jsmntok_t t can accept upto 128 tokens
+    ** t[0] ==> JSMN_OBJECT i.e entire input string
+    ** t[0] ==> Complete input string with start and end location (start = 0 ('{') & end = 98 ('}'))
+    ** t[0] ==> size represents total number of key-value pair is present in that object (4)
+    ** t[1] ==> 1st key start and end location (start = 2 ('u') & end = 6 (' " '))
+    ** t[1] ==> size is equal to 1
+    ** t[2] ==> Value of 1st key's start and end location (start = 10 ('j') & end = 17 (' " '))
+    ** t[2] ==> size is equal to 0
+    */
 
     jsmn_init(&p);
 
