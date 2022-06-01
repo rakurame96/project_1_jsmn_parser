@@ -1,7 +1,9 @@
+*.txt
 HexDump_example_o.txt
 Preprocessed_file.txt
 /.vscode/*.log
 /html/
+/latex/
 Doxyfile
-example_comments.c
-jsmn_comments.c
+example_1.c
+myexample.c

@@ -1,5 +1,8 @@
-#include <stdio.h>
 #include "jsmn.h"
+
+#ifdef DEBUG
+#include <stdio.h>
+#endif
 
 void jsmn_init(jsmn_parser * parser) {
     parser->pos = 0;
